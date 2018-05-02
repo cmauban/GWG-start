@@ -11,6 +11,32 @@
   order: 10;
 }
 
+.snippet {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.snippet__title {
+  order: 0;
+  width: 100%;
+  margin-bottom: .5em;
+}
+
+.snippet__thumbnail {
+  order: 1;
+}
+
+.snippet__description {
+  order: 2;
+  width: 70%;
+  margin: 0;
+  padding: 0 0 0 1em;
+  overflow: hidden;
+  display: -webkit-box; /* ADD DOTS FOR LONG TEXT */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+
 
 @media screen and (max-width: 549px) {
 
@@ -51,6 +77,15 @@
     padding: 1.5em;
   }
 
+  .snippet__thumbnail {
+    display: none;
+  }
+
+  .snippet__description {
+    padding: 0;
+    width: 100%;
+  }
+
 
 }
 
@@ -66,6 +101,16 @@
   .weather {
     order: 1;
     width: 40%;
+  }
+
+  .snippet__thumbnail {
+    width: 30%;
+    margin: 0;
+  }
+
+  .snippet__description {
+    -webkit-line-clamp: 3;
+    max-height: 3.7em;
   }
 
 }
@@ -92,6 +137,10 @@
     order: 3;
   }
 
+  .snippet__description {
+    -webkit-line-clamp: 4;
+    max-height: 4.7em;
+  }
 
 }
 
